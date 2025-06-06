@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi-Mode Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="A multi-mode calculator with scientific functions, currency conversion, and dark mode." />
+<meta name="author" content="Lavanya" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="favicon.ico" />
+</head>
+<body>
+    <canvas id="bg-animation"></canvas>
+    <input id="hidden-keyboard-capture" style="opacity:0; position:absolute; top:-100px;" />
+
+
+    <div id="main">
+        <!-- 🔷 App Header -->
+<header class="app-header">
+    <h1 class="app-title">Multi-Mode <span>Calculator</span></h1>
+    <p class="app-subtitle">Think. Tap. Solve.</p>
+  </header>  
+  <nav>
+    <div class="nav-item active" data-mode="simple">Simple</div>
+    <div class="nav-item" data-mode="scientific">Scientific</div>
+    <div class="nav-item" data-mode="currency">Currency</div>
+  </nav>
+
+  <!-- Simple Calculator -->
+  <section class="calc-section show" id="simple">
+    <div class="calculator simple-calc">
+      <input type="text" id="display" value="0" readonly>
+      <div class="grid">
+        <button class="red" onclick="clearDisplay()">C</button>
+        <button onclick="deleteLast()">⌫</button>
+        <button onclick="appendValue('%')">%</button>
+        <button class="orange" onclick="appendValue('/')">÷</button>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button class="orange" onclick="appendValue('*')">×</button>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button class="orange" onclick="appendValue('-')">−</button>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button class="orange" onclick="appendValue('+')">+</button>
+
+        <button onclick="appendValue('0')">0</button>
+        <button onclick="appendValue('.')">.</button>
+        <button class="green" onclick="calculateResult()">=</button>
+      </div>
+      <div id="history" class="history"></div>
+    </div>
+    
+  </section>
+
+  <!-- Scientific Calculator -->
+  <!-- Only the scientific section updated -->
+  <section class="calc-section" id="scientific">
+    <div class="calculator sci-calc">
+      <input type="text" id="sci-display" value="0" readonly>
+  
+      <!-- 🧠 SCIENTIFIC GRID STARTS HERE -->
+      <div class="sci-grid">
+        <button onclick="sciAppend('sin(')">sin</button>
+        <button onclick="sciAppend('cos(')">cos</button>
+        <button onclick="sciAppend('tan(')">tan</button>
+        <button onclick="sciAppend('log(')">log</button>
+        <button onclick="sciAppend('sqrt(')">√</button>
+        <button onclick="sciAppend('Math.exp(')">exp</button>
+        <button onclick="sciAppend('Math.log(')">ln</button>
+        <button onclick="sciAppend('Math.PI')">π</button>
+        <button onclick="sciAppend('Math.E')">e</button>
+        <button onclick="sciAppend('^')">^</button>
+        <button onclick="sciAppend('%')">%</button>
+        <button onclick="sciAppend('(')">(</button>
+        <button onclick="sciAppend(')')">)</button>
+        <button class="red" onclick="sciClear()">C</button>
+        <button onclick="sciDelete()">DEL</button>
+        <button class="green" onclick="sciCalculate()">=</button>
+        <button onclick="sciAppend('7')">7</button>
+        <button onclick="sciAppend('8')">8</button>
+        <button onclick="sciAppend('9')">9</button>
+        <button class="orange" onclick="sciAppend('/')">÷</button>
+        <button onclick="sciAppend('4')">4</button>
+        <button onclick="sciAppend('5')">5</button>
+        <button onclick="sciAppend('6')">6</button>
+        <button class="orange" onclick="sciAppend('*')">×</button>
+        <button onclick="sciAppend('1')">1</button>
+        <button onclick="sciAppend('2')">2</button>
+        <button onclick="sciAppend('3')">3</button>
+        <button class="orange" onclick="sciAppend('-')">−</button>
+        <button onclick="sciAppend('0')">0</button>
+        <button onclick="sciAppend('.')">.</button>
+        <button class="orange" onclick="sciAppend('+')">+</button>
+      </div>
+      <div id="sci-history" class="history"></div>
+    </div>
+  </section>
+  
+
+
+  <!-- Currency Converter (Unchanged) -->
+  <section class="calc-section" id="currency">
+    <div class="calculator currency-container">
+      <input type="number" id="amount" placeholder="Enter amount">
+      <select id="from">
+        <option value="INR">INR</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+      </select>
+      <select id="to">
+        <option value="INR">INR</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+      </select>
+      <button onclick="convertCurrency()">Convert</button>
+      <input type="text" id="currency-result" placeholder="Result" readonly>
+    </div>
+  </section>
+</div>
+<button id="theme-toggle" class="theme-toggle">Toggle Theme</button>
+<script src="script.js"></script>
+</body>
+</html>

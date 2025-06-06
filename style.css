@@ -1,0 +1,451 @@
+/* =============================================================
+   style.css – Styling for Multi-Mode Calculator UI
+   -------------------------------------------------------------
+   This file contains styling rules for:
+   - Page layout and structure
+   - Navigation sidebar
+   - Simple, Scientific, and Currency calculator sections
+   - Button aesthetics and responsive design
+   - Smooth animations
+   ============================================================= */
+
+/* ---- Reset default margin and padding, and set global font ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't add to element width */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column; /* Stack nav + main content vertically */
+    align-items: center;    /* Center horizontally */
+    justify-content: flex-start; /* Align nav to top, calculators below */
+    min-height: 100vh;
+    background: linear-gradient();
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+  }
+  
+  
+  /* ---- Sidebar Navigation ---- */
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #2c3e50;
+    width: 100%;
+    padding: 15px;
+    flex-wrap: wrap;
+  }
+  
+  
+ .nav-item {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+  font-weight: bold;
+}
+
+  
+  .nav-item:hover,
+  .nav-item.active {
+    background-color: #34495e; /* Highlight on hover and active */
+  }
+  
+  /* ---- Calculator Sections ---- */
+  .calc-section {
+    display: none; /* Hidden by default */
+    flex: 1; /* Take available space */
+    padding: 40px;
+  }
+  
+  .calc-section.show {
+    display: block; /* Show when active */
+  }
+  
+  /* ---- Calculator Common Styles ---- */
+  .calculator {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #0c153e;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .calculator:hover {
+    transform: scale(1.01); /* Slight zoom on hover */
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 10px 15px;
+    font-size: 1em;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3498db; /* Blue primary buttons */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2980b9; /* Darker on hover */
+  }
+  
+  button.operator {
+    background-color: #f39c12; /* Orange for operators */
+  }
+  
+  button.operator:hover {
+    background-color: #d68910;
+  }
+  
+  /* ---- Currency Converter Specific ---- */
+  .currency-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  select {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  /* Existing styles retained ... */
+
+/* === Calculator Grid === */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .sci-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  button {
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  button.red {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  button.orange {
+    background-color: #f39c12;
+    color: white;
+  }
+  
+  button.green {
+    background-color: #2ecc71;
+    color: white;
+  }
+  
+  .simple-calc .calculator,
+  .sci-calc .calculator {
+    background-color: #1e1e2f;
+    color: white;
+  }
+  
+  /* Additional spacing and input styling */
+  .calculator input[type="text"] {
+    font-size: 1.8em;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    text-align: right;
+    background: #fff;
+    color: black;
+  }
+
+  /*scientific .calc
+  /* ===================== Scientific Calculator Custom Layout ==================== */
+.sci-calc {
+    max-width: 700px;        /* Widened layout */
+    margin: auto;
+    padding: 25px;
+    background-color: #1e1e2f;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  }
+  
+  .sci-calc input[type="text"] {
+    width: 100%;
+    font-size: 2rem;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #000;
+    border: 2px solid #ccc; /* ✅ Adds visible border */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* ✅ Adds inner shadow for depth */
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+  }
+  
+  
+  .sci-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .sci-row button {
+    flex: 1 1 60px;            /* Flexible width, min 60px */
+    max-width: 100px;
+    padding: 15px 0;
+    font-size: 1.1em;
+    border-radius: 10px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .sci-row button:hover {
+    background-color: #2980b9;
+  }
+  
+  .sci-row button.orange {
+    background-color: #f39c12;
+  }
+  
+  .sci-row button.orange:hover {
+    background-color: #d68910;
+  }
+  
+  .sci-row button.green {
+    background-color: #2ecc71;
+  }
+  
+  .sci-row button.red {
+    background-color: #e74c3c;
+  }
+  
+  /* === Responsive Design for Small Devices === */
+@media screen and (max-width: 768px) {
+    .calculator {
+      max-width: 100%;
+      padding: 15px;
+      box-shadow: none;
+    }
+  
+    .sci-row {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .sci-row button {
+      flex: 1 1 45%; /* 2 per row on small screens */
+      font-size: 1em;
+      padding: 10px 0;
+    }
+  
+    .theme-toggle {
+      top: 10px;
+      right: 10px;
+      padding: 6px 10px;
+      font-size: 0.9em;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .sci-row button {
+      flex: 1 1 100%; /* One per row if needed */
+      font-size: 1em;
+    }
+  
+    nav {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    .nav-item {
+      flex: 1;
+      text-align: center;
+    }
+  
+    .calc-section {
+      padding: 20px 10px;
+    }
+  }
+  
+  
+  /* toggle dark mode effect */
+  
+  body.dark-mode {
+    background: #101017;
+  }
+  
+  body.dark-mode .calculator {
+    background-color: #abb1ba;
+    color: white;
+  }
+  
+  body.dark-mode input[type="text"],
+  body.dark-mode input[type="number"] {
+    background: #110e0e;
+    color: white;
+    border: 1px solid #888;
+  }
+  
+  body.dark-mode button {
+    background-color: #302f2f;
+    color: white;
+  }
+  
+  body.dark-mode button:hover {
+    background-color: #777;
+  }
+  
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.history {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #777;
+    max-height: 100px;
+    overflow-y: auto;
+  }
+  
+  /* Font improvement */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Button enhancements */
+button {
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Calculator visual polish */
+.calculator {
+  border-radius: 20px;
+  background-color: #ffffff;
+  padding: 25px;
+  transition: box-shadow 0.3s ease;
+}
+
+.calculator:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Better placeholder color */
+input::placeholder {
+  color: #aaa;
+}
+  
+  /* === Animated Background Canvas === */
+#bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;  /* Ensure it's behind everything */
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+  }
+
+  /* ===================== App Header Styling ===================== */
+.app-header {
+    text-align: center;
+    margin-top: 30px;
+    animation: fadeInDown 1s ease-out;
+  }
+  
+  .app-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1e2530;
+    margin: 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  .app-title span {
+    color: #3498db;
+  }
+  
+  .app-subtitle {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #555;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  
+  /* ✨ Fade-in animation on load */
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* 🌒 Dark Mode Theme */
+  body.dark-mode .app-title {
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.15);
+  }
+  
+  body.dark-mode .app-title span {
+    color: #00bfff;
+  }
+  
+  body.dark-mode .app-subtitle {
+    color: #ccc;
+  }
+  
+  
