@@ -19,8 +19,6 @@ A powerful, responsive web calculator that supports basic arithmetic, scientific
 
 ## 📸 Live Demo / Preview
 
-## 📸 Live Demo / Preview
-
 ### 🔹 Simple Calculator (Light Mode)
 ![Simple Calculator](simple-light.png)
 
@@ -30,8 +28,6 @@ A powerful, responsive web calculator that supports basic arithmetic, scientific
 ### 🔹 Currency Converter
 ![Currency Converter](currency.png)
 
-
-> 💡 Add your own screenshot as `screenshot.png` in the repo root.
 
 ---
 
@@ -61,7 +57,7 @@ To view the project locally:
    ```bash
    git clone https://lavanya2102-create.github.io/multi-mode-calculator/
 
-   ## 🧠 About the Project
+ ## 🧠 About the Project
 
 **Multi-Mode Calculator** is a responsive, front-end web application that integrates simple, scientific, and currency calculations in a single interface. It’s designed for both everyday users and those needing advanced math utilities.
 
@@ -77,9 +73,7 @@ This project was built to:
 
 ---
 
-### ✅ 2. About the Project (optional but great)
 
-```markdown
 ## 🧠 About the Project
 
 This calculator app was designed to combine multiple day-to-day calculation needs into one interface. Whether you’re solving math problems, converting currencies, or exploring scientific functions, this tool offers an intuitive and accessible experience.
