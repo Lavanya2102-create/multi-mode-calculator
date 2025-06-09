@@ -68,20 +68,17 @@ This project was built to:
 - Explore visual animations with the Canvas API
 - Enhance UI/UX with transitions and responsive design
 
-> It demonstrates how pure HTML, CSS, and JavaScript can be combined to build a practical, user-friendly tool with real-world value.
-
-
----
-
-
-## 🧠 About the Project
-
 This calculator app was designed to combine multiple day-to-day calculation needs into one interface. Whether you’re solving math problems, converting currencies, or exploring scientific functions, this tool offers an intuitive and accessible experience.
 
 It was created to practice front-end web development skills using:
 - Semantic HTML5
 - Modular and themed CSS3
 - Functional JavaScript (ES6+)
+> It demonstrates how pure HTML, CSS, and JavaScript can be combined to build a practical, user-friendly tool with real-world value.
+
+
+---
+
 
 ## 👩‍💻 Author
 
